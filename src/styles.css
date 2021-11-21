@@ -1,0 +1,10 @@
+a {
+    @apply text-yellow-700;
+}
+
+.bottom-navigation::-webkit-scrollbar {
+    @apply h-1 bg-yellow-800 py-1;
+}
+.dark .bottom-navigation::-webkit-scrollbar {
+    @apply h-1 bg-gray-900 py-1;
+}
