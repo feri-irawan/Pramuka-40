@@ -1,6 +1,7 @@
 import axios from 'axios'
 import {makeSlug} from './string'
-const host = 'http://localhost:5000'
+const host = process.env.NEXT_PUBLIC_SERVER_HOST
+console.log(host)
 
 export function addContent(content) {
     return axios.post(`${host}/addContent`, content)
