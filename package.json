@@ -1,23 +1,14 @@
 {
     "private": true,
     "scripts": {
-        "nextDev": "next dev",
-        "server": "node ./src/server.js",
-        "serverMon": "nodemon ./src/server.js",
-        "dev": "concurrently \"npm run server\" \"npm run nextDev\"",
-        "devMon": "concurrently \"npm run serverMon\" \"npm run nextDev\"",
+        "dev": "next dev",
         "build": "next build",
-        "nextStart": "next start",
-        "start": "concurrently \"npm run server\" \"npm run nextStart\""
+        "start": "next start"
     },
     "dependencies": {
         "@tinymce/tinymce-react": "^3.13.0",
         "aos": "^2.3.4",
         "axios": "^0.24.0",
-        "body-parser": "^1.19.0",
-        "concurrently": "^6.4.0",
-        "cors": "^2.8.5",
-        "express": "^4.17.1",
         "html-react-parser": "^1.4.0",
         "next": "latest",
         "next-themes": "0.0.15",

@@ -1,10 +1,8 @@
 function LoaderSpin() {
     return (
-        <p className="text-center">
-            <div className="animate-spin">
-                <ion-icon name="refresh-outline"></ion-icon>
-            </div>
-        </p>
+        <div className="animate-spin max-w-max mx-auto">
+            <ion-icon name="refresh-outline"></ion-icon>
+        </div>
     )
 }
 

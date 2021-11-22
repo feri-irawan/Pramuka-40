@@ -28,8 +28,9 @@ export default function DaftarMateri({category}) {
         <>
             {materi.map((m, i) => (
                 <CardMateri
+                    key={i}
                     title={m.title}
-                    href={`/materi/${category}/${makeSlug(m.title)}`}
+                    href={`/materi/${category}/${m.id}/${makeSlug(m.title)}`}
                     number={i + 1}
                 />
             ))}

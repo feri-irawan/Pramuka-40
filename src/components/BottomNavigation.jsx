@@ -15,8 +15,8 @@ function BottomNavigation() {
         <div className="bottom-navigation fixed bottom-0 left-0 right-0 bg-yellow-600 dark:bg-gray-800 rounded-t-lg sm:rounded-t-none overflow-x-auto">
             <div className="w-full max-w-lg mx-auto bg-yellow-700 dark:bg-gray-900 dark:bg-opacity-20">
                 <div className="grid grid-cols-5 justify-center shadow">
-                    {navs.map((nav) => (
-                        <Link href={nav.url}>
+                    {navs.map((nav, i) => (
+                        <Link key={i} href={nav.url}>
                             <a
                                 className={
                                     active == nav.url

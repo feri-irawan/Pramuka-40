@@ -1,7 +1,6 @@
 import axios from 'axios'
 import {makeSlug} from './string'
 const host = process.env.NEXT_PUBLIC_SERVER_HOST
-console.log(host)
 
 export function addContent(content) {
     return axios.post(`${host}/addContent`, content)
@@ -15,19 +14,20 @@ export function deleteAllContents() {
     return axios.delete(`${host}/deleteAllContents`)
 }
 
-export async function findContent(category, slug = '') {
-    const contents = (await loadContents()).data
-    let results
+export async function findContent(category, id = '', slug = '') {
+    const contents = (await loadContents()).data.data
 
+    let results
     if (category)
         results = contents.filter(
             (content) => makeSlug(content.category) === category
         )
 
-    if (category && slug !== '')
+    if (category && id !== '' && slug !== '')
         results = contents.find(
             (content) =>
                 makeSlug(content.category) === category &&
+                content.id == id &&
                 makeSlug(content.title) === slug
         )
 

@@ -1,20 +1,19 @@
 import {useTheme} from 'next-themes'
 import Link from 'next/link'
+import {useEffect, useState} from 'react'
 
 function Navbar({title}) {
     const {theme, setTheme} = useTheme()
+    const [icon, setIcon] = useState('moon')
 
     const toggleTheme = () => {
         setTheme(theme === 'dark' ? 'light' : 'dark')
+        setIcon(icon === 'moon' ? 'sunny' : 'moon')
     }
 
-    const ModeIcon = () => {
-        if (theme === 'light') {
-            return <ion-icon name="moon-outline" size="small"></ion-icon>
-        } else {
-            return <ion-icon name="sunny-outline"></ion-icon>
-        }
-    }
+    useEffect(() => {
+        setIcon(theme === 'light' ? 'moon' : 'sunny')
+    }, [icon])
 
     return (
         <header className="bg-yellow-700 text-gray-100 dark:bg-gray-800">
@@ -29,7 +28,10 @@ function Navbar({title}) {
                         onClick={toggleTheme}
                         className="px-5 pt-2 pb-1 inline-block rounded-md shadow hover:bg-yellow-700 dark:hover:bg-gray-700 hover:shadow-none duration-200"
                     >
-                        <ModeIcon />
+                        <ion-icon
+                            name={`${icon}-outline`}
+                            size="small"
+                        ></ion-icon>
                     </button>
                 </div>
             </nav>
