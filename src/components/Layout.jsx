@@ -11,7 +11,7 @@ function Layout({children, pageTitle}) {
     }
 
     return (
-        <>
+        <div className="font-inter">
             <Head>
                 <title>
                     {pageTitle} | {web.name}
@@ -41,7 +41,7 @@ function Layout({children, pageTitle}) {
                 </div>
             </div>
             <BottomNavigation />
-        </>
+        </div>
     )
 }
 

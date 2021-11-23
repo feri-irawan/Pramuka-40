@@ -34,11 +34,15 @@ export default () => {
     // Jika sudah ada kontent
     return (
         <Layout pageTitle={content.title}>
-            <h1 className="font-bold text-2xl mb-3">{content.title}</h1>
-            <div
-                className="break-words"
-                dangerouslySetInnerHTML={{__html: content.content}}
-            ></div>
+            <article>
+                <h1 className="font-bold text-2xl mb-3 pb-3 border-b">
+                    {content.title}
+                </h1>
+                <div
+                    className="break-words prose prose-yellow dark:prose-dark"
+                    dangerouslySetInnerHTML={{__html: content.content}}
+                ></div>
+            </article>
         </Layout>
     )
 }
