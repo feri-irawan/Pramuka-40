@@ -21,6 +21,11 @@ export default () => {
                 Materi Kepramukaan
             </h2>
             <DaftarMateri category="kepramukaan" />
+
+            <h2 className="text-xl font-bold text-center mt-6 mb-3">
+                Materi Umum
+            </h2>
+            <DaftarMateri category="umum" />
         </Layout>
     )
 }
